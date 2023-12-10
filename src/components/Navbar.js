@@ -11,20 +11,20 @@ const Navbar = () => {
     return (
         <div className={styles.container}>
             <div className={styles.containerOne}>
-                <img src={Search} width={20} />
+                <img alt="search" src={Search} width={20} />
                 <input type='text' placeholder='Chercher un livre' />
             </div>
             <div className={styles.containerThree}>
                 <Link to="/">
-                    <img src={Logo} width={200} />
+                    <img alt="libres logo" src={Logo} width={200} />
                 </Link>
             </div>
             <div className={styles.containerTwo}>
                 <Link to="/profil">
-                    <img src={Profil} width={20}/>
+                    <img alt="profil" src={Profil} width={20}/>
                 </Link>
                 <Link to="/cart">
-                    <img src={Cart} width={20}/>
+                    <img alt="cart" src={Cart} width={20}/>
                 </Link>
             </div>
         </div>
