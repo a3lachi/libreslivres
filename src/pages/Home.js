@@ -1,5 +1,7 @@
 import Navbar from "../components/Navbar";
 import NavbarTwo from "../components/NavbarTwo";
+import MidFirst from "../components/MidFirst";
+import Categories from "../components/Categories";
 
 const Home = () => {
 
@@ -8,6 +10,8 @@ const Home = () => {
         <>
             <Navbar />
             <NavbarTwo />
+            <MidFirst />
+            <Categories />
         </>
     )
 }

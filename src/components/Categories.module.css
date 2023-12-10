@@ -1,0 +1,29 @@
+.container {
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.container h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 40px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.categories a {
+    color: #09090b;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (max-width: 980px) {
+    .categories{
+        flex-direction: column;
+    }
+}

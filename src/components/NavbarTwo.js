@@ -6,18 +6,17 @@ const NavbarTwo = () => {
     return(
         <div className={styles.container}>
             <div>
-                Home
+                <a href="/">Home</a>
             </div>
             <div>
-                Catégories
+                <a href="/categories">Catégories</a>
             </div>
             <div>
-                Blog
+                <a href="/blog">Blog</a>
             </div>
             <div>
-                Contactez-nous
+                <a href="/contact">Contactez-nous</a>
             </div>
-
         </div>
     )
 }

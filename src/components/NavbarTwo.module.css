@@ -18,3 +18,17 @@
     font-size: small;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.container div a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container div:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+}
+
+@media only screen and (max-width: 980px) {
+    
+}
