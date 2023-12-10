@@ -1,0 +1,48 @@
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container div {
+    width: 200px;
+}
+
+.containerOne{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
+.containerTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.containerThree {
+}
+
+input:focus {
+    box-shadow: 0 0 2px 2px rgba(203, 98, 98); /* Example: Blue shadow */
+    outline: none;
+}
+
+@media only screen and (max-width: 980px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+}
