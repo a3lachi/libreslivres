@@ -37,3 +37,10 @@
 .wrapperTwo ul {
     margin: 0;
 }
+
+@media screen and (max-width:980px) {
+    .wrapper {
+        flex-direction: column;
+        padding: 0;
+    }
+}
