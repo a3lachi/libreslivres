@@ -23,8 +23,9 @@
 .wrapper li {
     width: 300px;
     height: 270px;
-    background-color: #9ca3af;
+    background-color: #e5e7eb;
     padding: 20px;
+    border-radius: 6px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
