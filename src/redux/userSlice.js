@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import {Proxy} from '../utils/constants'
+import {Backend} from '../utils/constants'
 
 
 const userSlice = createSlice({
@@ -77,7 +77,7 @@ const userSlice = createSlice({
           let year = date.getFullYear();
           const dateE = `${day}/${month}/${year}`
           axios
-              .post(`${Proxy}/api/customer/commands`,{jwt:state.jwt ,cmds:cemds , date:dateE , adrs:address})
+              .post(`${Backend}/api/customer/commands`,{jwt:state.jwt ,cmds:cemds , date:dateE , adrs:address})
               .then(state.commandsFetched = false)
               .catch((err) => console.log('ERR during AXIOS to update commands'))
       } catch (err) {

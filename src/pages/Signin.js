@@ -1,9 +1,25 @@
 import styles from './Signin.module.css';
 import Navbar from "../components/Navbar";
 import NavbarTwo from "../components/NavbarTwo";
+import { Backend } from '../utils/constants';
+import axios from 'axios';
+import { useState } from 'react';
 
 const Signin = () => {
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const SignIn = () => {
+        axios.post(`${Backend}/api/customer/signin`, { email: email, pwd: password })
+          .then(function (response) {
+            console.log('response');
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        
+    }
 
     return(
         <>
@@ -17,9 +33,9 @@ const Signin = () => {
                 </h1>
                 
                 <form className={styles.wrapper}>
-                    <input type='email' placeholder='Email' />
-                    <input type='password' placeholder='Password'  />
-                    <button>Connexion</button>
+                    <input onChange={(e)=>setEmail(e.target.value)}  type='email' placeholder='Email' />
+                    <input onChange={(e)=>setPassword(e.target.value)}  type='password' placeholder='Password'  />
+                    <button onClick={SignIn} >Connexion</button>
                     <a href='/signup'>
                         Créer un compte
                     </a>
