@@ -1,0 +1,22 @@
+
+
+.container {
+    width: 70vw;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 3rem;
+    flex-direction: column;
+}
+
+.container button {
+    width: 130px;
+    padding: 8px;
+    background-color: rgb(238, 138, 158);
+    color: white;
+    border-radius: 5px;
+}
+
+.container h6 {
+    margin-top: 60px;
+    margin-bottom: 0;
+}
