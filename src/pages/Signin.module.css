@@ -46,3 +46,8 @@
     font-size: small;
     color: black;
 }
+
+.wrapper p {
+    color: red;
+    font-size: small;
+}

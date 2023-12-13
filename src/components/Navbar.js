@@ -4,8 +4,11 @@ import Search from '../assets/icons/search.svg';
 import Profil from '../assets/icons/user.png';
 import Cart from '../assets/icons/cart.svg';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+    const jwt = useSelector((state) =>  state.user.jwt)
 
 
     return (
@@ -20,9 +23,11 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className={styles.containerTwo}>
-                <Link to="/profil">
+                { jwt.length > 0 ? <Link to="/profil">
                     <img alt="profil" src={Profil} width={20}/>
-                </Link>
+                </Link> : <Link to="/signin">
+                <img alt="profil" src={Profil} width={20}/>
+            </Link>}
                 <Link to="/cart">
                     <img alt="cart" src={Cart} width={20}/>
                 </Link>
