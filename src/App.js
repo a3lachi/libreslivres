@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route , Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Cart from './pages/Cart';
 import Profil from './pages/Profil';
+import Books from './pages/Books';
 import CategoriesPage from './pages/CategoriesPage';
 import { useSelector  } from "react-redux";
 import { store } from './redux/store'
@@ -35,6 +36,8 @@ function App() {
         <Route exact path="/cart" element={<Cart />} />
         
         <Route exact path="/categories" element={<CategoriesPage />} />
+
+        <Route exact path="/livres" element={<Books />} />
       </Routes>
     </Router>
   );

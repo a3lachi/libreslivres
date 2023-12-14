@@ -12,6 +12,9 @@ const NavbarTwo = () => {
                 <a href="/categories">Catégories</a>
             </div>
             <div>
+                <a href="/livres">Nos livres</a>
+            </div>
+            <div>
                 <a href="/blog">Blog</a>
             </div>
             <div>
