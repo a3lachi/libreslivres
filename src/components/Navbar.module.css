@@ -8,10 +8,10 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-
+/* 
 .container div {
     width: 200px;
-}
+} */
 
 .containerOne{
     display: flex;
@@ -34,6 +34,23 @@ input:focus {
     box-shadow: 0 0 2px 2px rgba(203, 98, 98); /* Example: Blue shadow */
     outline: none;
 }
+
+.cartlength{
+    position: relative;
+    background-color: rgba(203, 98, 98);
+    text-align: center;
+    width: 12px;
+    border-radius: 15px;
+    font-size: x-small;
+    color: white;
+    top: -29px;
+}
+
+.cartcontainer{
+    height: 20px;
+}
+
+
 
 @media only screen and (max-width: 980px) {
     .container {

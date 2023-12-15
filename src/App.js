@@ -10,6 +10,7 @@ import CategoriesPage from './pages/CategoriesPage';
 import { useSelector  } from "react-redux";
 import { store } from './redux/store'
 import {   setJwt } from './redux/userSlice'
+import Book from './pages/Book';
 
 
 
@@ -39,7 +40,7 @@ function App() {
 
         <Route exact path="/livres" element={<Books />} />
 
-        <Route exact path="/livres/:livre" element={<Books />} />
+        <Route exact path="/livres/:livre" element={<Book />} />
       </Routes>
     </Router>
   );

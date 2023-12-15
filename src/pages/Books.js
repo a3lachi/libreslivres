@@ -44,7 +44,7 @@ const Books = () => {
                 </div>
                 <ul className={styles.books}>
                     {books?.map((book, index) => (
-                        <div onClick={(e)=>navigateToBook(book.fields.name+'_'+book.fields.author)} key={index} className={styles.book}>
+                        <div onClick={(e)=>navigateToBook(book.fields.name+'_'+book.fields.author+'_'+book.fields.price)} key={index} className={styles.book}>
                             <img alt='book' src={'../assets/books/'+book.fields.name+book.fields.author+'1'} height={300}/>
                             <p>{book.fields.name}</p>
                             <p>{book.fields.price}.00 MAD</p>

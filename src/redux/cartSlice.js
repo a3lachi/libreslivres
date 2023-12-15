@@ -1,31 +1,47 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const persistedCart = window.localStorage.getItem('cart');
 
 
 const cartSlice = createSlice({
     name:"cart",
     initialState: {
-      itms: [] || JSON.parse(window.localStorage.getItem('cart')),
+    //   itms: [] || JSON.parse(window.localStorage.getItem('cart')),
+        itms: persistedCart ? JSON.parse(persistedCart) : []
     },
     reducers:{
-      addOne: (state , action) => {
-        var indic = 0
-        for (let i=0;i<state.itms.length;i++) {
-          if (state.itms[i].productname === action.payload.productname ) {
-            if ( state.itms[i].color === action.payload.color ) {
-              if ( state.itms[i].size === action.payload.size ) {
-                state.itms[i].quantity += action.payload.quantity
-                indic = 1
-              }
-            }
-            
-          }
+    //   addOne: (state , action) => {
+    //     console.log(action.payload);
+    //     const { book, author, price } = action.payload;
+        
+    //     const isBookInCart = state.itms.some(item => (
+    //         item.book === book && item.author === author && item.price === price
+    //     ));
+    
+    //     if (!isBookInCart) {
+    //         // state.itms.push({ book, author, price });
+    //         state.itms = [...state.itms,{ book, author, price } ];  
+    //     }
+    //     console.log('items : ' , Array.from(state.itms))
+        
+    //     window.localStorage.setItem('cart', JSON.stringify(state.itms));
+    //   },
+
+    addOne: (state, action) => {
+        const { book, author, price } = action.payload;
+      
+        const isBookInCart = state.itms.some(item => (
+          item.book === book && item.author === author && item.price === price
+        ));
+
+        if (!isBookInCart) {
+            state.itms = [...state.itms, action.payload];
+            console.log('items : ', state.itms.length)
+            window.localStorage.setItem('cart', JSON.stringify(state.itms));
         }
-        if (indic === 0 )
-        {state.itms = [...state.itms, action.payload]; }
-        window.localStorage.setItem('cart', JSON.stringify(state.itms));
         
       },
+
       delCart:(state,action) => {
         state.itms = [] 
         window.localStorage.removeItem('cart')

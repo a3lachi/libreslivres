@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 const Navbar = () => {
 
     const jwt = useSelector((state) =>  state.user.jwt)
+    const cartLength = useSelector(state => state.cart.itms).length
 
 
     return (
@@ -23,14 +24,21 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className={styles.containerTwo}>
-                { jwt.length > 0 ? <Link to="/profil">
-                    <img alt="profil" src={Profil} width={20}/>
-                </Link> : <Link to="/signin">
-                <img alt="profil" src={Profil} width={20}/>
-            </Link>}
-                <Link to="/cart">
-                    <img alt="cart" src={Cart} width={20}/>
-                </Link>
+                <div>
+                    { jwt.length > 0 ? <Link to="/profil">
+                        <img alt="profil" src={Profil} width={20}/>
+                        </Link> : <Link to="/signin">
+                            <img alt="profil" src={Profil} width={20}/>
+                        </Link>
+                    }
+                </div>
+                <div className={styles.cartcontainer}>
+                    <Link className={styles.cart} to="/cart">
+                        <img alt="cart" src={Cart} width={20}/>
+                    </Link>
+                    <div className={styles.cartlength}>{cartLength}</div>
+                </div>
+                    
             </div>
         </div>
     )

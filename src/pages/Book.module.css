@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapperOne{
+    background-color: green;
+    width: 70%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wrapperTwo{
+    background-color: blue;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.libreslivres {
+    font-size: 10px;
+    margin: 0;
+}
+
+.book {
+    margin: 0;
+}
+
+.price{
+    margin: 0;
+}
