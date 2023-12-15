@@ -38,6 +38,8 @@ function App() {
         <Route exact path="/categories" element={<CategoriesPage />} />
 
         <Route exact path="/livres" element={<Books />} />
+
+        <Route exact path="/livres/:livre" element={<Books />} />
       </Routes>
     </Router>
   );
