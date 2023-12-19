@@ -6,26 +6,9 @@ const persistedCart = window.localStorage.getItem('cart');
 const cartSlice = createSlice({
     name:"cart",
     initialState: {
-    //   itms: [] || JSON.parse(window.localStorage.getItem('cart')),
         itms: persistedCart ? JSON.parse(persistedCart) : []
     },
     reducers:{
-    //   addOne: (state , action) => {
-    //     console.log(action.payload);
-    //     const { book, author, price } = action.payload;
-        
-    //     const isBookInCart = state.itms.some(item => (
-    //         item.book === book && item.author === author && item.price === price
-    //     ));
-    
-    //     if (!isBookInCart) {
-    //         // state.itms.push({ book, author, price });
-    //         state.itms = [...state.itms,{ book, author, price } ];  
-    //     }
-    //     console.log('items : ' , Array.from(state.itms))
-        
-    //     window.localStorage.setItem('cart', JSON.stringify(state.itms));
-    //   },
 
     addOne: (state, action) => {
         const { book, author, price } = action.payload;

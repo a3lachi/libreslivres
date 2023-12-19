@@ -87,6 +87,10 @@ const userSlice = createSlice({
     setJwt : (state,action) => {
       state.jwt = action.payload
       localStorage.setItem("jwt", action.payload);
+      const d = new Date();
+      let time = d.getTime();
+      localStorage.setItem('jwtExpire',)
+
     }
   }
 })
