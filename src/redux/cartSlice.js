@@ -38,11 +38,17 @@ const cartSlice = createSlice({
           state.itms.splice(action.payload,1)
         }
         window.localStorage.setItem('cart', JSON.stringify(state.itms));
+      },
+      removeItem :(state, action) => {
+        console.log(action.payload)
+        const updatedItems = state.itms.filter((item, index) => index !== action.payload);
+        state.itms = updatedItems;
+        window.localStorage.setItem('cart', JSON.stringify(updatedItems));
       }
     }
   })
   
   
   
-  export const { addOne , delCart , updateCart , updateQtty } = cartSlice.actions ;
+  export const { addOne , delCart , updateCart , updateQtty , removeItem } = cartSlice.actions ;
   export default cartSlice.reducer ;

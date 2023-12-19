@@ -9,7 +9,7 @@ import Books from './pages/Books';
 import CategoriesPage from './pages/CategoriesPage';
 import { useSelector  } from "react-redux";
 import { store } from './redux/store'
-import {   setJwt } from './redux/userSlice'
+import {   logOutUser, setJwt } from './redux/userSlice'
 import Book from './pages/Book';
 
 
@@ -22,6 +22,17 @@ function App() {
   {
     store.dispatch(setJwt(localStorage.getItem('jwt')))
   }
+
+
+  // Checks if user jwt expired 
+  const issuedTime = localStorage.getItem('jwtExpire');
+  const currentTime = new Date().getTime();
+  const expirationDuration = 6 * 60 * 60 * 1000; 
+  const timeElapsed = currentTime - issuedTime;
+  if (timeElapsed > expirationDuration) {
+    store.dispatch(logOutUser);
+  }
+
 
   return (
     <Router>

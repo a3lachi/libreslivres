@@ -10,7 +10,6 @@ const userSlice = createSlice({
     pwd:"",
     firstname:"",
     lastname:"",
-    username:"",
     badAttempt:false,
     jwt:"",
     commandsFetched:false,
@@ -41,8 +40,8 @@ const userSlice = createSlice({
       state.jwt=""
       state.firstname=""
       state.lastname=""
-      state.username=""
       localStorage.removeItem("jwt");
+      localStorage.removeItem("jwtExpire");
     },
     setCommands: (state,action) => { // after fetch  from database
       // state.commands = [...state.commands, action.payload]
@@ -57,7 +56,6 @@ const userSlice = createSlice({
       state.pwd = action.payload[1]
       state.firstname = action.payload[2]
       state.lastname = action.payload[3]
-      state.username = action.payload[4]
     }
     ,
     addCommand : (state,action) => { // add to database
@@ -89,8 +87,7 @@ const userSlice = createSlice({
       localStorage.setItem("jwt", action.payload);
       const d = new Date();
       let time = d.getTime();
-      localStorage.setItem('jwtExpire',)
-
+      localStorage.setItem('jwtExpire',time)
     }
   }
 })
